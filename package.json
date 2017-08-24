@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "dbf-parser": "^0.0.1",
     "node-dbf": "^0.2.1",
     "synaptic": "^1.0.12"
   }

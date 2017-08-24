@@ -11,8 +11,6 @@ const obj = {};
 
 
 module.exports = new Promise((resolve) => {
-
-
 	arrayOfCurrencies.forEach(async (currency) => {
 		const curr = await getArray(currency);
 		if (currency !== 'usd') {
@@ -38,12 +36,17 @@ module.exports = new Promise((resolve) => {
 
 
 	function startTraining(obj, result) {
+		const max = Math.max(...result);
+
 		Object.keys(obj).forEach((key) => {
 			const country = obj[key];
 			country.forEach((key, index) => TrainingSet[index].input.push(key));
 		});
-		result.forEach((key, index) => TrainingSet[index].output.push(key));
-		resolve(TrainingSet);
+		result.forEach((key, index) => TrainingSet[index].output.push(key/max));
+		resolve({
+			max,
+			TrainingSet
+		});
 	}
 });
 
