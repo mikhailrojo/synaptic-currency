@@ -1,14 +1,20 @@
-### Neuronet tryouts ###
+### Neural network currency prediction model 2007 - 2017 ###
 
 I was trying to put my hand on neuronetwork with synaptic.js
 I created a Perceptron with 3 layers and parced data of currencies from 2007 to 2017 for 6 currencies.
+```
+new Architect.Perceptron(5, 15, 1);
 
+```
 - Australian
 - Belorusian
 - Euro
 - Japan
 - Swiss
 - USD
+
+I got currency historical data from Central Bank of Russia[CBR](http://www.cbr.ru/currency_base/dynamics.aspx "CBR historical data")
+
 
 I used first 5 as inputs to the NET, and USD as a output for training. Supposedly the NET should predict current currancy rate USD/RUB
 As a result, a got:
